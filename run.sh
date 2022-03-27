@@ -1,4 +1,5 @@
 #bash script to run c, cpp, java and python programs.
+#by Aditya Dayal
 
 #!/bin/bash
 
