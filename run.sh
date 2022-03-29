@@ -3,11 +3,21 @@
 
 #!/bin/bash
 
-echo
+if [ $# -ne 1 ]; 
 
-echo "Write the file name you wanna compile : "
+    then
 
-read FILE
+       echo
+
+       echo "Write the file name you wanna compile : "
+
+       read FILE
+
+else
+
+    FILE=$1
+    
+fi
 
 echo
 
@@ -15,9 +25,9 @@ echo "Here's the result!"
 
 echo
 
+if [ "${FILE##*.}" = "cpp" ];
 
-
-if [ $FILE = *.cpp ];
+#if [ $FILE = *.cpp ];
 
 then
 
@@ -41,7 +51,9 @@ then
 
 	rm a.out
 
-elif [ $FILE = *.c ];
+#elif [ $FILE = *.c ];
+
+elif [ "${FILE##*.}" = "c" ];
 
 then
 
@@ -61,7 +73,9 @@ then
 
 	echo
 
-elif [ $FILE = *.java ];
+elif [ "${FILE##*.}" = "java" ];
+
+#elif [ $FILE = *.java ];
 
 then
 
@@ -75,7 +89,9 @@ then
 
 	echo
 
-elif [ $FILE = *.py ];
+#elif [ $FILE = *.py ];
+
+elif [ "${FILE##*.}" = "py" ];
 
 then
 
@@ -96,4 +112,3 @@ else
 	echo
 
 fi
-
